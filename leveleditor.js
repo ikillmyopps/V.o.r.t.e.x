@@ -65,3 +65,28 @@ function createLevel() {
     levelEditor.innerHTML += '<rect x="' + powerup.x + '" y="' + powerup.y + '" width="' + powerup.width + '" height="' + powerup.height + '" fill="' + powerup.color + '"></rect>';
   }
 }
+function updateLevel() {
+  // Listen for key presses
+  document.addEventListener('keydown', function(e) {
+    // 'w' key
+    if (e.key === 'W') {
+      // Move the player up
+      level.player.y -= 5;
+    }
+    // 's' key
+    else if (e.key === 'S') {
+      // Move the player down
+      level.player.y += 5;
+    }
+    // 'a' key
+    else if (e.key === 'A') {
+      // Move the player left
+      level.player.x -= 5;
+    }
+    // 'd' key
+    else if (e.key === 'D') {
+      // Move the player right
+      level.player.x += 5;
+    }
+  });
+}
